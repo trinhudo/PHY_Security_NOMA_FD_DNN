@@ -15,6 +15,7 @@ In this paper, we study the physical layer security (PHY-security) improvement m
 - Deep neural network (DNN)
 - Secrecy outage probability (SOP)
 
+# Demonstration of DNN-based Secrecy Outage Probability (SOP) Prediction
 ```python
 
 # call packet for machine learning model
@@ -69,13 +70,10 @@ model.add(keras.layers.Dense(128, activation='relu',
 # Output Layer
 model.add(keras.layers.Dense(1, activation='linear',
                              kernel_initializer='normal'))  
-# our output layer 
-
 
 # Setting for the DNN model training. 
 reduce_lr = ReduceLROnPlateau(monitor = 'val_loss', patience = 1, factor = 0.8, min_lr = 1e-10) # for adaptive learning rate
 optimizer = keras.optimizers.Adam(lr = 1e-2) # optimizer for update DNN model
-
 
 model.compile(optimizer = optimizer,
               loss='mse',
@@ -119,64 +117,11 @@ history = model.fit(x_train, y_train,
     405/405 [==============================] - 3s 6ms/step - loss: 0.0770 - mse: 0.0770 - val_loss: 0.0020 - val_mse: 0.0020
     Epoch 2/30
     405/405 [==============================] - 2s 6ms/step - loss: 0.0015 - mse: 0.0015 - val_loss: 4.9305e-04 - val_mse: 4.9305e-04
-    Epoch 3/30
-    405/405 [==============================] - 2s 6ms/step - loss: 5.2723e-04 - mse: 5.2723e-04 - val_loss: 8.9191e-04 - val_mse: 8.9191e-04
-    Epoch 4/30
-    405/405 [==============================] - 2s 6ms/step - loss: 3.7436e-04 - mse: 3.7436e-04 - val_loss: 1.6042e-04 - val_mse: 1.6042e-04
-    Epoch 5/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.7464e-04 - mse: 1.7464e-04 - val_loss: 3.4055e-04 - val_mse: 3.4055e-04
-    Epoch 6/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.0372e-04 - mse: 1.0372e-04 - val_loss: 1.2751e-04 - val_mse: 1.2751e-04
-    Epoch 7/30
-    405/405 [==============================] - 2s 6ms/step - loss: 7.7219e-05 - mse: 7.7219e-05 - val_loss: 4.6460e-05 - val_mse: 4.6460e-05
-    Epoch 8/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.0435e-04 - mse: 1.0435e-04 - val_loss: 2.5102e-04 - val_mse: 2.5102e-04
-    Epoch 9/30
-    405/405 [==============================] - 2s 6ms/step - loss: 5.4597e-05 - mse: 5.4597e-05 - val_loss: 1.0115e-04 - val_mse: 1.0115e-04
-    Epoch 10/30
-    405/405 [==============================] - 2s 6ms/step - loss: 5.8966e-05 - mse: 5.8966e-05 - val_loss: 3.6941e-05 - val_mse: 3.6941e-05
-    Epoch 11/30
-    405/405 [==============================] - 2s 6ms/step - loss: 3.3738e-05 - mse: 3.3738e-05 - val_loss: 3.6434e-05 - val_mse: 3.6434e-05
-    Epoch 12/30
-    405/405 [==============================] - 2s 6ms/step - loss: 2.6185e-05 - mse: 2.6185e-05 - val_loss: 1.7755e-05 - val_mse: 1.7755e-05
-    Epoch 13/30
-    405/405 [==============================] - 2s 5ms/step - loss: 2.1195e-05 - mse: 2.1195e-05 - val_loss: 2.0063e-05 - val_mse: 2.0063e-05
-    Epoch 14/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.7960e-05 - mse: 1.7960e-05 - val_loss: 1.8661e-05 - val_mse: 1.8661e-05
-    Epoch 15/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.7857e-05 - mse: 1.7857e-05 - val_loss: 1.7812e-05 - val_mse: 1.7812e-05
-    Epoch 16/30
-    405/405 [==============================] - 2s 5ms/step - loss: 1.6791e-05 - mse: 1.6791e-05 - val_loss: 1.4052e-05 - val_mse: 1.4052e-05
-    Epoch 17/30
-    405/405 [==============================] - 2s 5ms/step - loss: 1.4967e-05 - mse: 1.4967e-05 - val_loss: 1.3804e-05 - val_mse: 1.3804e-05
-    Epoch 18/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.4194e-05 - mse: 1.4194e-05 - val_loss: 1.2796e-05 - val_mse: 1.2796e-05
-    Epoch 19/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.3561e-05 - mse: 1.3561e-05 - val_loss: 1.3142e-05 - val_mse: 1.3142e-05
-    Epoch 20/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.2698e-05 - mse: 1.2698e-05 - val_loss: 1.5519e-05 - val_mse: 1.5519e-05
-    Epoch 21/30
-    405/405 [==============================] - 2s 5ms/step - loss: 1.2703e-05 - mse: 1.2703e-05 - val_loss: 1.2243e-05 - val_mse: 1.2243e-05
-    Epoch 22/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.1834e-05 - mse: 1.1834e-05 - val_loss: 1.1757e-05 - val_mse: 1.1757e-05
-    Epoch 23/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.1891e-05 - mse: 1.1891e-05 - val_loss: 1.1395e-05 - val_mse: 1.1395e-05
-    Epoch 24/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.1444e-05 - mse: 1.1444e-05 - val_loss: 1.1149e-05 - val_mse: 1.1149e-05
-    Epoch 25/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.1380e-05 - mse: 1.1380e-05 - val_loss: 1.0841e-05 - val_mse: 1.0841e-05
-    Epoch 26/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.0665e-05 - mse: 1.0665e-05 - val_loss: 1.0665e-05 - val_mse: 1.0665e-05
-    Epoch 27/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.0810e-05 - mse: 1.0810e-05 - val_loss: 1.1716e-05 - val_mse: 1.1716e-05
-    Epoch 28/30
-    405/405 [==============================] - 2s 6ms/step - loss: 1.0646e-05 - mse: 1.0646e-05 - val_loss: 1.1582e-05 - val_mse: 1.1582e-05
+    ...
     Epoch 29/30
     405/405 [==============================] - 2s 6ms/step - loss: 1.0618e-05 - mse: 1.0618e-05 - val_loss: 1.0652e-05 - val_mse: 1.0652e-05
     Epoch 30/30
     405/405 [==============================] - 2s 6ms/step - loss: 1.0404e-05 - mse: 1.0404e-05 - val_loss: 1.0470e-05 - val_mse: 1.0470e-05
-
-
 
 ```python
 # plt.plot(history.history['mean_squared_error'])
@@ -195,12 +140,7 @@ plt.legend(['Train', 'Validation'], loc='upper right')
 plt.show()
 ```
 
-    No handles with labels found to put in legend.
-
-
-
 ![png](output_2_1.png)
-
 
 
 ```python
@@ -237,8 +177,6 @@ model.save('Trained_DNN_FarUserMTS.h5')
 # verify the trained model
 new_model = keras.models.load_model('Trained_DNN_FarUserMTS.h5')
 y_pred = new_model.predict(x_test)
-
-
 
 print('===============================================')
 print('Root Mean Squared Error:', 
