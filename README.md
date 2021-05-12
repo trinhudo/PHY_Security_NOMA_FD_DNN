@@ -15,6 +15,9 @@ In this paper, we study the physical layer security (PHY-security) improvement m
 - Deep neural network (DNN)
 - Secrecy outage probability (SOP)
 
+## Paper
+[PDF file](https://github.com/trinhudo/PHY_Security_NOMA_FD_DNN/blob/main/Kyusung%20IoT%20accepted%20version.pdf)
+
 # Demonstration of DNN-based Secrecy Outage Probability (SOP) Prediction
 ```python
 
