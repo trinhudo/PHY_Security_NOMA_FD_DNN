@@ -18,7 +18,6 @@ In this paper, we study the physical layer security (PHY-security) improvement m
 # Demonstration of DNN-based Secrecy Outage Probability (SOP) Prediction
 ```python
 
-# call packet for machine learning model
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,7 +27,8 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau
 #from keras.callbacks import ReduceLROnPlateau
 from sklearn.model_selection import train_test_split
 from keras.layers import BatchNormalization
-from tensorflow.keras.layers import Dense, Dropout, Activation, Flatten, Conv1D, MaxPooling1D
+from tensorflow.keras.layers import Dense, Dropout, \
+    Activation, Flatten, Conv1D, MaxPooling1D
 
 NUM_EPOCHS = 30 # The number of epochs for training.
 BATCH_SIZE = 200 #  
@@ -70,21 +70,30 @@ model.add(keras.layers.Dense(128, activation='relu',
 # Output Layer
 model.add(keras.layers.Dense(1, activation='linear',
                              kernel_initializer='normal'))  
+# our output layer 
+
 
 # Setting for the DNN model training. 
-reduce_lr = ReduceLROnPlateau(monitor = 'val_loss', patience = 1, factor = 0.8, min_lr = 1e-10) # for adaptive learning rate
-optimizer = keras.optimizers.Adam(lr = 1e-2) # optimizer for update DNN model
+reduce_lr = ReduceLROnPlateau(monitor = 'val_loss', 
+                              patience = 1, 
+                              factor = 0.8, 
+                              min_lr = 1e-10) 
+# for adaptive learning rate
+
+optimizer = keras.optimizers.Adam(lr = 1e-2) 
+# optimizer for update DNN model
+
 
 model.compile(optimizer = optimizer,
               loss='mse',
               metrics=['mse'])
 
 history = model.fit(x_train, y_train, 
-                validation_split=0.1,
-                epochs = NUM_EPOCHS, 
-                batch_size = BATCH_SIZE,
-                callbacks = [reduce_lr]
-                )
+                    validation_split=0.1,
+                    epochs = NUM_EPOCHS,  
+                    batch_size = BATCH_SIZE,
+                    callbacks = [reduce_lr]
+                    )
 ```
 
            Unnamed: 0  Unnamed: 1  Unnamed: 2  ...  Unnamed: 9  Unnamed: 10  Unnamed: 11
