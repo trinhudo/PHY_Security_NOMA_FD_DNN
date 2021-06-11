@@ -1,6 +1,7 @@
 # Enhancing PHY-Security of FD-Enabled NOMA Systems Using Jamming and User Selection: Performance Analysis and DNN Evaluation
 
-**Kyusung Shim, Tri Nhu Do, Toan-Van Nguyen, Daniel Benevides da Costa, and Beongku An**   
+**Kyusung Shim, Tri Nhu Do, Toan-Van Nguyen, Daniel Benevides da Costa, and Beongku An**  
+_IEEE Internet of Things Journal_
 
 ## Abstract
 
@@ -16,7 +17,8 @@ In this paper, we study the physical layer security (PHY-security) improvement m
 - Secrecy outage probability (SOP)
 
 ## Paper
-[PDF file](https://github.com/trinhudo/PHY_Security_NOMA_FD_DNN/blob/main/Kyusung%20IoT%20accepted%20version.pdf)
+- [View PDF file](https://github.com/trinhudo/PHY_Security_NOMA_FD_DNN/blob/main/Kyusung%20IoT%20accepted%20version.pdf)
+- [IEEExplore](https://ieeexplore.ieee.org/document/9431237)
 
 # Demonstration of DNN-based Secrecy Outage Probability (SOP) Prediction
 ```python
@@ -201,3 +203,17 @@ print('END')
     Root Mean Squared Error: 0.00331421030026788
     ===============================================
     END
+ 
+## BibTeX
+If you find that our paper is interesting and our code is helpful, please cite our paper. Thank you!
+
+```
+@ARTICLE{Shim_JIOT_2021,
+  author={Shim, Kyusung and Do, Tri Nhu and Nguyen, Toan-Van and da Costa, Daniel Benevides and An, Beongku},
+  journal={IEEE Internet of Things Journal}, 
+  title={Enhancing PHY-Security of FD-Enabled {NOMA} Systems Using Jamming and User Selection: Performance Analysis and {DNN} Evaluation}, 
+  year={2021},
+  month={May},
+  note = {{DOI}: 10.1109/JIOT.2021.3080425}}
+  
+```
